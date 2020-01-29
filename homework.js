@@ -3,17 +3,51 @@
 // For example, `remove(['Cadence', 'Ordel', 'Marion'], 'Marion')` results
 // in `['Cadence', 'Ordel']`.
 //
+
+function remove(members, potentialMembers){
+    for (let i=0; i < members.length; i++ ) {
+        if (potentialMembers === members[i]){
+            members.splice(i, 1)
+        }
+    }
+    return members
+}
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
+
+
 
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
 
+function remove(members, potentialMembers){ 
+    let newArray= members.slice()
+    for (let i=0; i < newArray.length; i++ ) {
+        if (potentialMembers === newArray[i]){
+            newArray.splice(i, 1)
+        }
+    }
+    return newArray
+}
+
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(numbers){
+    return numbers.reduce(function(total, number) {
+        return (total + number)}, 0)
+}
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
+function average(numbers){
+    if (numbers.length > 0){
+        return numbers.reduce(function(total,number){
+            return (total + number)}, 0)/numbers.length
+        }
+    }
+    
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
